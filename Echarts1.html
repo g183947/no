@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            width: 100vw;
+            height: 100vh;
+       
+        }
+ a {
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            color: aqua;
+            font-size: 23px;
+            margin-left: 60px;
+            line-height: 50px;
+
+        }
+        .bok{
+            width: 77vw;
+            height:100px;
+          margin: auto;
+        }
+        p{
+            width:300px;
+            height:50px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+         
+        }
+        span{
+            width:300px;
+            height:50px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+          
+        }
+        .m{
+            width:16vw;
+            height:100px;
+          margin: auto;
+          text-align: center;
+            line-height: 100px;
+        }
+a{
+      width:20vw;
+      height:5vh;
+      background-color: aqua;
+      color: white;
+      border: 2px solid gray;
+      text-align: center;
+      line-height: 5vh;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <a href="./Echarts1.html">Echarts图1</a>
+        <a href="./Echarts.html">Echarts图2</a>
+        <a href="./Map.html">地图</a>
+        <a href="./Swiper.html">轮播图</a>
+        <div class="ech">
+           
+            <div class="bok">
+                <div style="display: inline-block;width:300px;
+                height:50px;">
+                    <p>浏览量(pv)</p>
+                    <span>50</span>   
+                </div>
+                <div style="display: inline-block;width:300px;
+                height:50px;">
+                    <p>访客数(uv)</p>
+                    <span>27</span>   
+                </div>
+                <div style="display: inline-block;width:300px;
+                height:50px;">
+                    <p>IP</p>
+                    <span>7</span>   
+                </div>
+                <div style="display: inline-block;width:300px;
+                height:50px;">
+                    <p>胜出率</p>
+                    <span>87.5%</span>   
+                </div>
+                <div style="display: inline-block;width:300px;
+                height:50px;">
+                    <p>平均访问时间长</p>
+                    <span>00:04:08</span>   
+                </div>
+                </div>
+                 <div id="main" style="width:100vw;height:400px;"></div>
+                    <div class="m">
+                        <p>对比：
+                            <input type="checkbox">前一日
+                            <input type="checkbox">上周周期
+                        </p>
+                    </div>
+                 
+        </div>
+
+    </div>
+</body>
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        xAxis: {
+          
+            type: 'category',
+            boundaryGap: false,
+            data: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+            axisLabel: {
+                formatter:function(value,index){
+                if (index ===0||index ===3|| index ===6||index ===9|| index ===12|| index ===15||index ===18||index ===21) {  
+                  return value;  
+                  } else {  
+                   return null;   
+                    }  
+            }   
+            }
+     
+         },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                data: [0, 0, 0, 0, 0, 0, 16, 10, 5, 6, 3, 0, 0, 10, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                type: 'line',
+                areaStyle: {
+
+                }
+            }
+        ]
+    };
+
+    option && myChart.setOption(option);
+
+</script>
+
+</html>
